@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PennClubs</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">Penn Clubs</a>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<%= yield %>
+		</div>
+		<div class="span3">
+			<h2> About Us </h2>
+				<p> Penn Clubs has compiled a list of the all the clubs on campus. Depending on your interests we will recommend clubs to you! </p2>
+		<div>
+	</div>
+</div>
+<div class="navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<h3> About the Creator </h3>
+			<p> My name is Arjun Raj Jain and I'm currently a freshman at the University of Pennsylvania. I used to be a twitter hater but i've converted ever since September 2012. Check me out on <a href="https://twitter.com/ArjunRajJain">Twitter </a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
