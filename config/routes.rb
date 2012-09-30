@@ -1,4 +1,8 @@
 PennClubs::Application.routes.draw do
+  resources :comments
+
+  resources :users
+
   get "welcome/index"
 
   resources :clubs
