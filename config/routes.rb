@@ -1,12 +1,15 @@
 PennClubs::Application.routes.draw do
+  resources :preferences
+
   resources :comments
 
   resources :users
 
-  get "welcome/index"
+  get "/welcome/index"
 
   resources :clubs
 
+  resources :welcome
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

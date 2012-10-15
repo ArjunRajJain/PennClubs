@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PennClubs</title>
+  <title>Penn Clubs</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -16,16 +16,19 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="#">Penn Clubs</a>
+			 <%= link_to 'Penn Clubs',root_path,:class=>"brand"%>
 		</div>
 	</div>
 </div>
 <div class="container">
 	<div class="row">
-		<div class="span9">
+	</br>
+	</div>
+	<div class="row">
+		<div class="span5">
 			<%= yield %>
 		</div>
-		<div class="span3">
+		<div class="span3 offset4">
 			<h2> About Us </h2>
 				<p> Penn Clubs has compiled a list of the all the clubs on campus. Depending on your interests we will recommend clubs to you! </p2>
 		<div>

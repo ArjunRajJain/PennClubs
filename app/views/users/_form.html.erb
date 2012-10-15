@@ -12,14 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <input id="user_name" name="user[name]" size="30" type="text" placeholder="Name">
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <input id="user_email" name="user[email]" size="30" type="email" placeholder="Email">
+  </div>
+  <div class="field">
+    <input type="password" placeholder="Password">
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <input name="commit" class="btn btn-primary btn-large" type="submit" value="Sign Up">
+    <input name="commit" class="btn btn-inverse btn-large" type="submit" value="Sign In">
   </div>
+
 <% end %>
