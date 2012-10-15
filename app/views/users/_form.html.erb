@@ -20,6 +20,15 @@
   <div class="field">
     <input type="password" placeholder="Password">
   </div>
+  <p> Preferences </p>
+  <div class="field">
+  <% @allPreferences.each {|p|  %>
+    
+      <%= check_box_tag "preferences[]",p %>
+      <%= p %>
+    
+  <% } %>
+  </div>
   <div class="actions">
     <input name="commit" class="btn btn-primary btn-large" type="submit" value="Sign Up">
     <input name="commit" class="btn btn-inverse btn-large" type="submit" value="Sign In">
