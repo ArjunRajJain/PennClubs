@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+Masala:
+  name: Penn Masala
+  description: Singing Group
+  contact: Vishal
+  url: www.pennmasala.com
+

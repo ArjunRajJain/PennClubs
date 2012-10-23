@@ -5,7 +5,6 @@ class CreateClubs < ActiveRecord::Migration
       t.string :description
       t.string :contact
       t.string :url
-      t.string :type
 
       t.timestamps
     end
