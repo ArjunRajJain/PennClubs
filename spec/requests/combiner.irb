@@ -1,0 +1,31 @@
+def combiner (one, two, three, hsh = {})
+	op = hsh[:operation]
+	if op == "+"
+		puts one + two + three
+	end
+	if op == "*"
+		puts one * two * three
+	end
+	if op == "-"
+		puts one - two - three
+	end
+	if op == "/"
+		puts one / two / three
+	end
+end
+
+def combiner(hsh={}, *rest) 
+	op = hsh[:operation]
+	if op == "+"
+		puts rest.inject(:+)
+	end
+	if op == "*"
+		puts rest.inject(:*)
+	end
+	if op == "-"
+		puts rest.inject(:-)
+	end
+	if op == "/"
+		puts rest.inject(:/)
+	end
+end

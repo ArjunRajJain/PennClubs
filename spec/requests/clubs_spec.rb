@@ -4,6 +4,7 @@ describe "Clubs" do
   describe "GET /clubs" do
   	fixtures :clubs
   	before do
+        sign_in
       	visit clubs_path
       	click_link "New Club"
     end  

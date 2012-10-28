@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
+    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
     respond_to do |format|
       if @user.save
         params[:preferences].each do |pref|
