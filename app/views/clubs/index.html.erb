@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Contact</th>
     <th>Url</th>
-    <th></th>
+    <th>Image</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,6 +17,7 @@
     <td><%= club.description %></td>
     <td><%= club.contact %></td>
     <td><%= club.url %></td>
+    <td><%= image_tag(club.picture_url(:thumbnail), :width => 50, :height => 50) %></td>
   </tr>
 <% end %>
 </table>

@@ -28,6 +28,8 @@ end
 
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+  gem 'carrierwave'
+  gem 'cloudinary'
 
 gem 'jquery-rails'
 gem 'devise' 

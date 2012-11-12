@@ -3,8 +3,6 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    @clubs = Club.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clubs }
@@ -42,7 +40,6 @@ class ClubsController < ApplicationController
   # POST /clubs.json
   def create
     @club = Club.new(params[:club])
-
     respond_to do |format|
       if @club.save
         format.html { redirect_to @club, notice: 'Club was successfully created.' }
@@ -58,7 +55,6 @@ class ClubsController < ApplicationController
   # PUT /clubs/1.json
   def update
     @club = Club.find(params[:id])
-
     respond_to do |format|
       if @club.update_attributes(params[:club])
         format.html { redirect_to @club, notice: 'Club was successfully updated.' }

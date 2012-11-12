@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: pennclubs
+  api_key: '169437262717315'
+  api_secret: B8rKUS4YiOuMvgS_drRJ4-cefJc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: pennclubs
+  api_key: '169437262717315'
+  api_secret: B8rKUS4YiOuMvgS_drRJ4-cefJc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: pennclubs
+  api_key: '169437262717315'
+  api_secret: B8rKUS4YiOuMvgS_drRJ4-cefJc
+  enhance_image_tag: true
+  static_image_support: false
