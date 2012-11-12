@@ -11,15 +11,12 @@
     <th></th>
   </tr>
 
-<% @clubs.each do |club| %>
+<% Club.top10.each do |club| %>
   <tr>
-    <td><%= club.name %></td>
+    <td><%= link_to club.name, club %></td>
     <td><%= club.description %></td>
     <td><%= club.contact %></td>
     <td><%= club.url %></td>
-    <td><%= link_to 'Show', club %></td>
-    <td><%= link_to 'Edit', edit_club_path(club) %></td>
-    <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
