@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   # GET /users
   # GET /users.json
+
   def index
-    @users = User.all
+    @user = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,8 +27,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
-    respond_to do |format|
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
     end
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
   end
 
   # POST /users
@@ -60,7 +61,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
+    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
