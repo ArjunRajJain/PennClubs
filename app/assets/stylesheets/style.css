@@ -1,0 +1,100 @@
+/**
+ * Parallax Scrolling Tutorial
+ * For NetTuts+
+ *  
+ * Author: Mohiuddin Parekh
+ *	http://www.mohi.me
+ * 	@mohiuddinparekh   
+ */
+
+
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+
+
+#c1 { 
+	background: url(c1.jpg) 100% 0 no-repeat fixed; 
+	height: 1080px;  
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#c2 { 
+	background: url(c2.jpg) 100% 0 no-repeat fixed; 
+	height: 1080px;
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#c3 { 
+	background: url(c3.jpg) 100% 0 no-repeat fixed; 
+	height: 1080px;
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#c4 { 
+	background: url(c4.jpg) 100% 0 no-repeat fixed; 
+	height: 1080px;
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#c5 { 
+	background: url(c5.jpg) 100% 0 no-repeat fixed; 
+	height: 1080px;
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+
+#c1 article { 
+	height: 458px; 
+	position: absolute; 
+	top: 291px; 
+	width: 100%;
+}
+
+#c2 article { 
+	height: 458px; 
+	position: absolute; 
+	top: 291px; 
+	width: 100%; 
+}
+#c3article { 
+	height: 458px; 
+	position: absolute; 
+	top: 291px; 
+	width: 100%;
+}
+
+#c4 article { 
+	height: 458px; 
+	position: absolute; 
+	top: 291px; 
+	width: 100%; 
+}
+#c5 article { 
+	height: 458px; 
+	position: absolute; 
+	top: 291px; 
+	width: 100%;
+}

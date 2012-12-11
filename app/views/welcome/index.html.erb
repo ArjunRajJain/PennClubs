@@ -1,13 +1,102 @@
-<h1>Welcome to <span class="has-title" title="PennClubs">PennClubs </span>!</h1>
+<% if !user_signed_in? %>
+<body>
+		<!-- Section #1 -->
+		<section id="c1" data-speed="100" data-type="background">
+			<article>
+                <div class="hero-unit">
+				    <h1 style="word-spacing 10px; letter-spacing: 1px;">Having a tough  time picking what college you want to go to? </h1>
+			     </div>
+            </article>
+		</section>
 
-<% if user_signed_in? %>
-<p>
-  <%= link_to "View Clubs", clubs_path, class: "btn btn-primary" %> to get started!
-</p>
-<p>
-	<td><%= link_to 'Profile', edit_user_path(@user) %></td>
-<% else %>
-<p>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %> to get started!
-</p>
+		<!-- Section #2 -->
+		<section id="c2" data-speed="100" data-type="background">
+			<article>
+                <div class = "hero-unit">
+                    <h1 style="word-spacing 10px; letter-spacing: 1px;">Don’t know what to write for your essays? </h1>
+                </div>
+            </article>
+		</section>
+
+        <!-- Section #2 -->
+        <section id="c5" data-speed="100" data-type="background">
+            <article>
+                <div class = "hero-unit">
+                    <h1 style="word-spacing 10px; letter-spacing: 1px;">Did you know that clubs and organizations make your college experience?</h1>
+                </div>
+            </article>
+        </section>
+        <!-- Section #1 -->
+        <section id="c1" data-speed="100" data-type="background">
+            <article>
+                <div class="hero-unit">
+                    <h1 > We give you access to information about every college affiliated club in the United States! </h1>
+                 </div>
+            </article>
+        </section>
+        <!-- Section #2 -->
+        <section id="c5" data-speed="100" data-type="background">
+            <article>
+                <div class = "hero-unit">
+                    <h1>So go ahead &amp;</h1><h1>Make the right choice for you. </h1><h1></h1>
+<%= form_for(@newUser) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <p id="WantHelp"> Preferences - </p>
+  <p id="NoHelp"> By picking your preferences, we can recommend what clubs are 
+  fit for you! </p>
+  <div class="field">
+  <% @allPreferences.each {|p|  %>
+      <%if @user.preferences.include? p %>
+      <%= check_box_tag "preferences[]",p,true %>
+      <%else%>
+      <%= check_box_tag "preferences[]",p %>
+      <%= p %>
+      <%end%>
+  <% } %>
+  </div>
+  <div class="actions">
+    <input name="commit" class="btn btn-primary btn-large" type="submit" value="Save">
+  </div>
+
 <% end %>
+<script> 
+$('#NoHelp').click(function() {
+  $('#NoHelp').fadeOut('slow', function() {
+    // Animation complete.
+  });
+});
+$('#WantHelp').click(function() {
+  $('#NoHelp').fadeIn('slow', function() {
+    // Animation complete.
+  });
+});
+</script>
+
+                </div>
+            </article>
+        </section>
+	</body>
+<%end%>
