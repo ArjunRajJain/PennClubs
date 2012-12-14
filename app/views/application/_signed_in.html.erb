@@ -1,0 +1,4 @@
+<div class="navbar-form pull-right">
+    <%= gravatar_for current_user %> <%= current_user.name %>
+  	<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout btn' %>
+</div>

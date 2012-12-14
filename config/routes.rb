@@ -1,4 +1,6 @@
 PennClubs::Application.routes.draw do
+  resources :colleges
+
   devise_for :users
 
   resources :preferences

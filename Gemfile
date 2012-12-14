@@ -30,6 +30,7 @@ end
   gem 'twitter-bootstrap-rails'
   gem 'carrierwave'
   gem 'cloudinary'
+  gem 'gravatar'
 
 gem 'jquery-rails'
 gem 'devise' 

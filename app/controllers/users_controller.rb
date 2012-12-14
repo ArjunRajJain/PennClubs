@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    @user = User.all
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
       respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -43,12 +44,13 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
     respond_to do |format|
       if @user.save
         params[:preferences].each do |pref|
             Preference.new(name: pref , user_id: @user.id).save
         end
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to :clubs, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
