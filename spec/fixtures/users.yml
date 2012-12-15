@@ -1,5 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-Arjun:
-  email: arjun.raj.jain@gmail.com
-  encrypted_password: $2a$10$62roHJVHS4WBFtayOXDqUerjjzvdrjoDF5hp8POtYc4p...
+mat:
+  name: Mat
+  email: mat@schaffer.me
+  encrypted_password: $2a$10$YkbHqams6s07ZE78jRoDIulaiHGOqcgjppxFmSbrCHCB9xRgvAKc6
