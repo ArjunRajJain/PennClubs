@@ -4,7 +4,7 @@
 		<section id="c1" data-speed="100" data-type="background">
 			<article>
                 <div class="hero-unit">
-				    <h1 style="word-spacing 10px; letter-spacing: 1px;">Having a tough  time picking what college you want to go to? </h1>
+				    <h1 id="First" style="word-spacing 10px; letter-spacing: 1px;">Having a tough  time picking what college you want to go to? </h1>
 			     </div>
             </article>
 		</section>
@@ -42,20 +42,19 @@
                		<div id="login">
 					<%= render :partial => 'users/form' %>
 					</div>
-<script> 
-$('#NoHelp').click(function() {
-  $('#NoHelp').fadeOut('slow', function() {
-    // Animation complete.
-  });
-});
-$('#WantHelp').click(function() {
-  $('#NoHelp').fadeIn('slow', function() {
-    // Animation complete.
-  });
-});
-</script>
                 </div>
             </article>
         </section>
 	</body>
 <%end%>
+<script> 
+$('#First').click(function() {
+    $("#First").fadeOut(function() {
+        $(this).text("Yes!!").fadeIn();
+    });
+    var x = 250; //insert your own formula to calculate where you want to scroll to in px
+    var t = 500; //arbitrary time in ms
+    $("html,body").animate({ scrollBottom: x }, t);
+});
+
+</script>
