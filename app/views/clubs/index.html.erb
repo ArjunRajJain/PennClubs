@@ -1,26 +1,23 @@
-<h1>Listing clubs</h1>
+<h1><%=link_to "clubs", clubs_path%></h1>
+<div id="tag_cloud">
+  <% tag_cloud Club.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<h2></h2>
+<% @clubs.each do |club| %>
+<div class="hero-unit">
+    <h2><%= link_to club.name, club %></h2>
+     <%= image_tag(club.picture_url(:thumbnail), size:"300x300") %>
+    <p>Description: <%= club.description %></p>
+    <p>Contact: <%= mail_to club.contact %></p>
+    <%=link_to club.url, club.url %></br>
+    <p>
+      Tags = <%= raw club.tag_list.map { |t| link_to t, tag_path(t)}.join(',') %>
+    </p>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Contact</th>
-    <th>Url</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% Club.top10.each do |club| %>
-  <tr>
-    <td><%= link_to club.name, club %></td>
-    <td><%= club.description %></td>
-    <td><%= club.contact %></td>
-    <td><%= club.url %></td>
-    <td><%= image_tag(club.picture_url(:thumbnail), size:"300x300") %></td>
-  </tr>
 <% end %>
-</table>
 
 <br />
 

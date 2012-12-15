@@ -1,10 +1,8 @@
-
-
-<%= form_for(@user) do |f| %>
+</br>
+<%= form_for(@user, :html => { :class => 'form-horizontal' }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,36 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-    <div class="field">
-    <%= f.label :name %><br />
+    <div class="control-group">
+    <%= f.label :name, :class=>"control-label"  %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="control-group">
+    <%= f.label :email, :class=>"control-label" %>
     <%= f.email_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="control-group">
+    <%= f.label :password, :class=>"control-label"  %>
     <%= f.password_field :password %>
-  </div>
-  <p id="WantHelp"> Preferences - </p>
-  <p id="NoHelp"> By picking your preferences, we can recommend what clubs are 
-  fit for you! </p>
-  <div class="field">
-  <% @allPreferences.each {|p|  %>
-      <%if @user.preferences.include? p %>
-      <%= check_box_tag "preferences[]",p,true %>
-      <%else%>
-      <%= check_box_tag "preferences[]",p %>
-      <%= p %>
-      <%end%>
-  <% } %>
   </div>
   <div class="actions">
     <input name="commit" class="btn btn-primary btn-large" type="submit" value="Save">
   </div>
-
 <% end %>
 <script> 
 $('#NoHelp').click(function() {

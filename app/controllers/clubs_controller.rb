@@ -3,9 +3,10 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @clubs }
+    if params[:tag]
+      @clubs = Club.tagged_with(params[:tag])
+    else
+      @clubs = Club.all
     end
   end
 

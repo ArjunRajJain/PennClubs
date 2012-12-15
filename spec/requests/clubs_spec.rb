@@ -2,19 +2,19 @@ require 'spec_helper'
 
 describe "Clubs" do
   describe "GET /clubs" do
-  	fixtures :clubs
+  	fixtures :users
   	before do
         sign_in
       	visit clubs_path
       	click_link "New Club"
     end  
-    it "works!", js: true do
+    it "Shows errors", js: true do
       click_on("Create Club")
       fill_in("Name", :with => "Penn Wow")
       error_message1 = "Url can't be blank"
       error_message2 = "Contact can't be blank"
       error_message3 = "Description can't be blank"
-      page.should have_content(error_message1) and page.should have_content(error_message1) and page.should have_content(error_message1)
+      page.should have_content(error_message1) and page.should have_content(error_message2) and page.should have_content(error_message3)
     end
     it "includes all params", js: true do
       fill_in("Name", :with => "Penn Wow")

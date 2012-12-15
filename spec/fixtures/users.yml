@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: 
-  email: MyString
-
-two:
-  name: 
-  email: MyString
+Arjun:
+  email: arjun.raj.jain@gmail.com
+  encrypted_password: $2a$10$62roHJVHS4WBFtayOXDqUerjjzvdrjoDF5hp8POtYc4p...

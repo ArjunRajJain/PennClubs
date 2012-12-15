@@ -1,22 +1,22 @@
-<h1>Listing colleges</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1><%=link_to "Colleges", colleges_path%></h1>
+</br>
 <% @colleges.each do |college| %>
-  <tr>
-    <td><%= college.name %></td>
-    <td><%= link_to 'Show', college %></td>
-    <td><%= link_to 'Edit', edit_college_path(college) %></td>
-    <td><%= link_to 'Destroy', college, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="hero-unit">
+    <h2><%= college.name %></h2>
+    <% college.clubs.each do |club| %>
+      <div class="hero-unit">
+    <h2><%= link_to club.name, club %></h2>
+     <%= image_tag(club.picture_url(:thumbnail), size:"300x300") %>
+    <p>Description: <%= club.description %></p>
+    <p>Contact: <%= mail_to club.contact %></p>
+    <%=link_to club.url, club.url %></br>
+    <p>
+      Tags = <%= raw club.tag_list.map { |t| link_to t, tag_path(t)}.join(',') %>
+    </p>
+</div>
+    <% end %>
+  </div>
 <% end %>
-</table>
 
 <br />
 

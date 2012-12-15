@@ -31,6 +31,7 @@ end
   gem 'carrierwave'
   gem 'cloudinary'
   gem 'gravatar'
+  gem 'acts-as-taggable-on'
 
 gem 'jquery-rails'
 gem 'devise' 

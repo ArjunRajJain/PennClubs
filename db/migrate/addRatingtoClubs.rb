@@ -1,5 +1,5 @@
 class AddRatingToClubs < ActiveRecord::Migration
   def change
-  	add_index :clubs, :rating, :decimal 
+  	add_index :clubs, :college_id
   end
 end

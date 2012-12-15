@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   # GET /users
   # GET /users.json
-
+  def tagged
+      if params[:tag].present? 
+      @users = User.tagged_with(params[:tag])
+    else 
+      @users = User.postall
+    end  
+end
   def index
     @users = User.all
 
@@ -47,9 +53,6 @@ class UsersController < ApplicationController
     @allPreferences = ["Music","Art","Dance","Choir/Singing","Varsity Sports","Club Sport"]
     respond_to do |format|
       if @user.save
-        params[:preferences].each do |pref|
-            Preference.new(name: pref , user_id: @user.id).save
-        end
         format.html { redirect_to :clubs, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else

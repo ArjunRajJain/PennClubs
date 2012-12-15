@@ -1,4 +1,6 @@
 PennClubs::Application.routes.draw do
+  get 'tags/:tag', to: 'clubs#index', as: :tag
+
   resources :colleges
 
   devise_for :users
